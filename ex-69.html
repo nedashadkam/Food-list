@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="ex-69.css">
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="add">
+
+            <h3>Add food items</h3>
+
+            <input id="item" type="text" placeholder="Enter the name of the food item">
+
+            <button onclick="addItems()" id="bt-add">Add to list</button>
+
+        </div>
+
+        <div id="list">
+
+            <h3>Food list</h3>
+
+            <div id="demo"></div>
+
+            <button onclick="document.getElementById('demo').innerHTML = ''" id="bt-clear">Clear all items</button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function addItems() {
+
+            let text = document.getElementById("item").value;
+
+            if(text !== " ") {
+                document.getElementById("demo").innerHTML +=
+                `<p>${text} <i onclick="this.parentNode.remove()" class="material-icons">delete_outline</i></p>`;
+
+                document.getElementById("item").value = "";
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
